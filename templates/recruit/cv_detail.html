@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简历详情</title>
+</head>
+<body>
+<center>
+    <div style="width: 1246px;height: 900px">
+        <div style="float: left;width: 1200px;height: 500px">
+                <table class="table table-hover" cellspacing="100" style="width: 1100px;height: 200px">
+                    <tr class="active">
+                        <td class="info" style="width: 100px;text-align: center"><h3><strong>称呼</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ cv.call_name }}</h3></td>
+                        <td class="info" style="width: 100px;text-align: center"><h3><strong>性别</strong></h3></td>
+                        <td style="width: 200px;text-align: center"><h3>{{ cv.gender }}</h3></td>
+                        <td class="info" style="width: 100px;text-align: center"><h3><strong>自我介绍</strong></h3></td>
+                    </tr>
+                    <tr class="active">
+                        <td class="info" style="width: 100px;text-align: center"><h3><strong>年龄</strong></h3></td>
+                        <td style="width: 200px;text-align: center"><h3>{{ cv.age }}</h3></td>
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>民族</strong></h3></td>
+                        <td style="width: 130px;text-align: center"><h3>{{ cv.nation }}</h3></td>
+                        <td class="warning" rowspan="5" style="word-break: break-all; width: 200px;text-align: center"><h4>{{ cv.introduction }}</h4></td>
+                    </tr>
+                    <tr class="active">
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>身高</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ cv.tall }}</h3></td>
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>地址</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ cv.address }}</h3></td>
+                    </tr>
+                    <tr class="active">
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>毕业院校</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ cv.graduate }}</h3></td>
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>毕业时间</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ cv.graduate_time }}</h3></td>
+                    </tr>
+                    <tr class="active">
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>专业</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ cv.major }}</h3></td>
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>电话</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ cv.tel }}</h3></td>
+                    </tr>
+                    <tr class="active">
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>QQ</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ cv.QQ }}</h3></td>
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>外语水平</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ cv.language }}</h3></td>
+                    </tr>
+                </table>
+        </div>
+        <div style="float: left;width: 1200px;height: 300px">
+                <table class="table table-hover" cellspacing="100" style="width: 1100px;height: 200px">
+                    <tr class="active">
+                        <td class="info" style="width: 100px;text-align: center"><h3><strong>求职职务</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ cv.duty }}</h3></td>
+                        <td class="info" style="width: 100px;text-align: center"><h3><strong>证书等级</strong></h3></td>
+                        <td style="width: 200px;text-align: center"><h3>{{ cv.certificate_level }}</h3></td>
+                        <td class="info" style="width: 100px;text-align: center"><h3><strong>工作经历</strong></h3></td>
+                    </tr>
+                    <tr class="active">
+                        <td class="info" style="width: 100px;text-align: center"><h3><strong>特殊证书</strong></h3></td>
+                        <td style="width: 200px;text-align: center"><h3>{{ cv.special_certificate }}</h3></td>
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>航线区域</strong></h3></td>
+                        <td style="width: 130px;text-align: center"><h3>{{ cv.route_area }}</h3></td>
+                        <td class="warning" rowspan="4" style="word-break: break-all; width: 200px;text-align: center"><h4>{{ cv.introduction }}</h4></td>
+                    </tr>
+                    <tr class="active">
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>应聘船型</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ cv.recruitment_ship }}</h3></td>
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>时间范围</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ cv.time }}</h3></td>
+                    </tr>
+                    <tr class="active">
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>合同年限</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ cv.contract }}</h3></td>
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>特殊技能</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ cv.special_skills }}</h3></td>
+                    </tr>
+                    <tr class="active">
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>提供月薪</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ cv.salary }}</h3></td>
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>发布时间</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ cv.post_time }}</h3></td>
+                    </tr>
+                </table>
+            <input type="submit" class="button  button-pill button-large" value="返回" onclick=window.location.href='/search_crew'>
+            <br/><br/><p6>联系时请说明在中万艘网获得的信息</p6>
+        </div>
+    </div>
+ </center>
+</body>
+</html>
+{% endblock %}

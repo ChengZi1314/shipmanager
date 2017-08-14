@@ -1,0 +1,266 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>招聘船员</title>
+    <style type="text/css">
+        #title{
+            width: 850px;
+            height: 30px;
+            line-height: 100px;
+            padding-right: 150px;
+            padding-top: 10px;
+        }
+        #right{
+            float:left;
+            width: 370px;
+            height: 850px;
+            background-color: #f6fcff;
+            padding-top: 20px;
+        }
+        #left{
+            float: left;
+            width: 200px;
+            height: 850px;
+            background-color: #f6fcff;
+
+        }
+        #right2{
+            float:left;
+            width: 370px;
+            height: 650px;
+            background-color: #f6fcff;
+            padding-top: 20px;
+        }
+        #left2{
+            float: left;
+            width: 200px;
+            height: 650px;
+            background-color: #f6fcff;
+
+        }
+        #text1{
+            line-height: 31px;
+        }
+        #text2 {
+            line-height: 32px;
+        }
+        #text3 {
+            line-height: 34px;
+        }
+        #button{
+            width: 848px;
+            height: 50px;
+            float: left;
+            padding-right: 200px;
+        }
+        #form1{
+            width: 300px;
+            height: 40px;
+        }
+    </style>
+</head>
+<center>
+<body>
+    <form  method="get" style="float:left">
+        <div style="width: 1246px;height: 900px;padding-right: 20px;  padding-top: 30px;"><!--大框-->
+        <div style="width: 600px;height: 900px;float: left;">
+            <div id="left">
+                <h3 id="text1">招聘职位：</h3>
+                <h3 id="text1">证书等级：</h3>
+                <h3 id="text1">特殊证书：</h3>
+                <h3 id="text1">航线区域：</h3>
+                <h3 id="text1">招聘船型：</h3>
+                <h3 id="text1">吨——位：</h3>
+                <h3 id="text1">时间范围：</h3>
+                <h3 id="text2">上船地点：</h3>
+                <h3 id="text2">上船时间：</h3>
+                <h3 id="text2">船龄：</h3>
+                <h3 id="text2">合同年限：</h3>
+                <h3 id="text2">具体要求：</h3>
+            </div>
+            <div id="right">
+                    <label for="duty">
+                        <select name="insert_duty" class="form-control" id="form1">
+                            <option value="">———————职——务———————</option> 
+                            <option value="船长">船长</option>
+                            <option value="大副">大副</option>
+                            <option value="二副">二副</option>
+                            <option value="三副">三副</option>
+                            <option value="白皮三副">白皮三副</option>
+                            <option value="驾助">驾助</option>
+                            <option value="实习三副">实习三副</option>
+                            <option value="GMDSS普通操作员">GMDSS普通操作员</option>
+                            <option value="水手长">水手长</option>
+                            <option value="木匠">木匠</option>
+                            <option value="水手">水手</option>
+                            <option value="高级水手">高级水手</option>
+                            <option value="二水">二水</option>
+                            <option value="新证水手">新证水手</option>
+                            <option value="实习水手">实习水手</option>
+                            <option value="轮机长">轮机长</option>
+                            <option value="大管轮">大管轮</option>
+                            <option value="二管轮">二管轮</option>
+                            <option value="三管轮">三管轮</option>
+                            <option value="白皮三管">白皮三管</option>
+                            <option value="电机员">电机员</option>
+                            <option value="电工">电工</option>
+                            <option value="轮助">轮助</option>
+                            <option value="实习三管">实习三管</option>
+                            <option value="机工长">机工长</option>
+                            <option value="铜匠">铜匠</option>
+                            <option value="泵匠">泵匠</option>
+                            <option value="机工">机工</option>
+                            <option value="高级机工">高级机工</option>
+                            <option value="新证机工">新证机工</option>
+                            <option value="实习机工">实习机工</option>
+                            <option value="高级水手">高级水手</option>
+                            <option value="大厨">大厨</option>
+                            <option value="服务员">服务员</option>
+                            <option value="船医">船医</option>
+                        </select>
+                    </label><br/>
+                    <label for="certificate_level">
+                        <select name="insert_certificate_level" class="form-control" id="form1">
+                            <option value="">———————证书等级———————</option>
+                            <option value="甲类">甲类</option>
+                            <option value="乙一">乙一</option>
+                            <option value="乙二">乙二</option>
+                            <option value="丙一">丙一</option>
+                            <option value="丙二">丙二</option>
+                            <option value="丁类">丁类</option>
+                            <option value="长一">长一</option>
+                            <option value="长二">长二</option>
+                            <option value="内河">内河</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </label><br/>
+                    <label for="special_certificate">
+                        <select name="insert_special_certificate" class="form-control" id="form1">
+                            <option value="">———————特殊证书———————</option>
+                            <option value="化高证书">化高证书</option>
+                            <option value="油高证书">油高证书</option>
+                            <option value="液高证书">液高证书</option>
+                            <option value="油化双证">油化双证</option> 
+                            <option value="客滚船证书">客滚船证书</option>
+                            <option value="海进江证书">海进江证书</option>
+                            <option value="外籍签注适任证书">外籍签注适任证书</option>
+                            <option value="高速船证书">高速船证书</option>
+                            <option value="其他特殊证书">其他特殊证书</option>
+                        </select>
+                    </label><br/>
+                    <label for="route_area">
+                        <select name="insert_route_area" class="form-control" id="form1">
+                            <option value="">———————航线区域———————</option>
+                            <option value="国内南北线">国内南北线</option>
+                            <option value="中日韩">中日韩</option>
+                            <option value="东南亚">东南亚</option>
+                            <option value="中东波斯湾">中东波斯湾</option> 
+                            <option value="地中海">地中海</option>
+                            <option value="南北美">南北美</option>
+                            <option value="环球航线">环球航线</option>
+                            <option value="内河航线">内河航线</option>
+                            <option value="江海航线">江海航线</option>
+                            <option value="长江航线">长江航线</option>
+                            <option value="其他航线">其他航线</option>
+                        </select>
+                    </label><br/>
+                    <label for="recruitment_ship">
+                        <select name="insert_recruitment_ship" class="form-control" id="form1">
+                            <option value="">———————招聘船型———————</option>
+                            <option value="散杂货船">散杂货船</option>
+                            <option value="集装箱船">集装箱船</option>
+                            <option value="多用途船">多用途船</option>
+                            <option value="油轮">油轮</option>
+                            <option value="化学品船">化学品船</option>
+                            <option value="油化船">油化船</option>
+                            <option value="液化气船">液化气船</option>
+                            <option value="工程船">工程船</option>
+                            <option value="冷藏船">冷藏船</option>
+                            <option value="港作船">港作船</option>
+                            <option value="LNG动力船">LNG动力船</option>
+                            <option value="客船">客船</option>
+                            <option value="客滚船">客滚船</option>
+                            <option value="滚装汽车船">滚装汽车船</option>
+                            <option value="拖轮">拖轮</option>
+                            <option value="作业渔船">作业渔船</option>
+                            <option value="打桩船">打桩船</option>
+                            <option value="邮船">邮船</option>
+                            <option value="沥青船">沥青船</option>
+                            <option value="木材船">木材船</option>
+                            <option value="泵船">泵船</option>
+                            <option value="工作船">工作船</option>
+                            <option value="邮政船">邮政船</option>
+                            <option value="海监船">海监船</option>
+                            <option value="救援船">救援船</option>
+                            <option value="不上船">不上船</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </label><br/>
+                    <label for="tonnage">
+                        <select name="insert_tonnage" class="form-control" id="form1">
+                            <option value="">———————吨——位———————</option>
+                            <option value="5千吨以下">5千吨以下</option>
+                            <option value="5千吨-1万吨">5千吨-1万吨</option>
+                            <option value="1万吨-2万吨">1万吨-2万吨</option>
+                            <option value="2万吨-3万吨">2万吨-3万吨</option> 
+                            <option value="3万吨-6万吨">3万吨-6万吨</option>
+                            <option value="6万吨-10万吨">6万吨-10万吨</option>
+                            <option value="10万吨-15万吨">10万吨-15万吨</option>
+                            <option value="15万吨-30万吨">15万吨-30万吨</option>
+                            <option value="30万吨以上">30万吨以上</option>
+                        </select>
+                    </label><br/>
+                    <label for="time">
+                        <select name="insert_time" class="form-control" id="form1">
+                            <option value="">———————时间范围———————</option>
+                            <option value="一星期内">一星期内</option>
+                            <option value="一个月内">一个月内</option>
+                            <option value="三个月内">三个月内</option>
+                            <option value="一年以内">一年以内</option> 
+                        </select>
+                    </label><br/>
+                    <input style="width: 300px" class="form-control" type="text" name="insert_onboard_location" placeholder="上船地点"><br/>
+                    <input style="width: 300px" class="form-control" type="text" name="insert_onboard_time" placeholder="上船时间"><br/>
+                    <input style="width: 300px" class="form-control" type="text" name="insert_ship_age" placeholder="船龄"><br/>
+                    <input style="width: 300px" class="form-control" type="text" name="insert_contract" placeholder="合同年限"><br/>
+                    <textarea style="height: 200px;width: 300px" class="form-control" name="insert_require" placeholder="具体要求"></textarea><br/>
+            </div>
+        </div>
+        <div style="width: 600px;height: 900px;float: left;">
+            <div id="left2">
+                <h3 id="text3">公司名称：</h3>
+                <h3 id="text3">在线—QQ：</h3>
+                <h3 id="text3">提供月薪：</h3>
+                <h3 id="text3">联—系人：</h3>
+                <h3 id="text3">联系电话：</h3>
+                <h3 id="text3">公司地址：</h3>
+                <h3 id="text3">公司性质：</h3>
+                <h3 id="text3">电子邮件：</h3>
+                <h3 id="text3">企业简介：</h3>
+            </div>
+            <div id="right2">
+                    <input style="width: 300px" class="form-control" type="text" name="insert_company_name" placeholder="公司名称"><br/>
+                    <input style="width: 300px" class="form-control" type="text" name="insert_QQ" placeholder="在线QQ"><br/>
+                    <input style="width: 300px" class="form-control" type="text" name="insert_salary" placeholder="提供月薪"><br/>
+                    <input style="width: 300px" class="form-control" type="text" name="insert_contact" placeholder="联系人"><br/>
+                    <input style="width: 300px" class="form-control" type="text" name="insert_tel" placeholder="联系电话"><br/>
+                    <input style="width: 300px" class="form-control" type="text" name="insert_address" placeholder="公司地址"><br/>
+                    <input style="width: 300px" class="form-control" type="text" name="insert_property" placeholder="公司性质"><br/>
+                    <input style="width: 300px" class="form-control" type="text" name="insert_email" placeholder="电子邮件"><br/>
+                    <textarea style="height: 200px;width: 300px" class="form-control" name="insert_introduction" placeholder="企业简介"></textarea><br/>
+            </div>
+            <div style="width: 600px;height: 200px;float: left;padding-top: 100px">
+                <input type="submit" class="button button-primary button-pill button-large" value="提交搜索内容" >
+                <input type="button" class="button button-pill button-large" value="返回主页" onclick="window.location.href='/'">
+            </div>
+        </div></div>
+    </form>
+
+</body>
+</center>
+
+</html>
+{% endblock %}

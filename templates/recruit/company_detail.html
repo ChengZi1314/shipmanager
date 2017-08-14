@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>公司详情</title>
+</head>
+<body>
+<center>
+    <div style="width: 1246px;height: 900px">
+        <div style="float: left;width: 1200px;height: 500px">
+                <table class="table table-hover" cellspacing="100" style="width: 1100px;height: 200px">
+                    <tr class="active">
+                        <td class="info" style="width: 100px;text-align: center"><h3><strong>职务</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ recruit.duty }}</h3></td>
+                        <td class="info" style="width: 100px;text-align: center"><h3><strong>证书等级</strong></h3></td>
+                        <td style="width: 200px;text-align: center"><h3>{{ recruit.certificate_level }}</h3></td>
+                        <td class="info" style="width: 100px;text-align: center"><h3><strong>具体要求</strong></h3></td>
+                    </tr>
+                    <tr class="active">
+                        <td class="info" style="width: 100px;text-align: center"><h3><strong>特殊证书</strong></h3></td>
+                        <td style="width: 200px;text-align: center"><h3>{{ recruit.special_certificate }}</h3></td>
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>航线区域</strong></h3></td>
+                        <td style="width: 130px;text-align: center"><h3>{{ recruit.route_area }}</h3></td>
+                        <td class="warning" rowspan="5" style="word-break: break-all; width: 200px;text-align: center"><h4>{{ recruit.require }}</h4></td>
+                    </tr>
+                    <tr class="active">
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>招聘船型</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ recruit.recruitment_ship }}</h3></td>
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>吨位</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ recruit.tonnage }}</h3></td>
+                    </tr>
+                    <tr class="active">
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>时间范围</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ recruit.time }}</h3></td>
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>上船地点</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ recruit.onboard_location }}</h3></td>
+                    </tr>
+                    <tr class="active">
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>上船时间</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ recruit.onboard_time }}</h3></td>
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>船龄</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ recruit.ship_age }}</h3></td>
+                    </tr>
+                    <tr class="active">
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>合同年限</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ recruit.contract }}</h3></td>
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>发布时间</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ recruit.post_time }}</h3></td>
+                    </tr>
+                </table>
+        </div>
+        <div style="float: left;width: 1200px;height: 300px">
+                <table class="table table-hover" cellspacing="100" style="width: 1100px;height: 200px">
+                    <tr class="active">
+                        <td class="info" style="width: 100px;text-align: center"><h3><strong>公司名称</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ recruit.company_name }}</h3></td>
+                        <td class="info" style="width: 100px;text-align: center"><h3><strong>在线QQ</strong></h3></td>
+                        <td style="width: 200px;text-align: center"><h3>{{ recruit.QQ }}</h3></td>
+                        <td class="info" style="width: 100px;text-align: center"><h3><strong>企业简介</strong></h3></td>
+                    </tr>
+                    <tr class="active">
+                        <td class="info" style="width: 100px;text-align: center"><h3><strong>联系人</strong></h3></td>
+                        <td style="width: 200px;text-align: center"><h3>{{ recruit.contact }}</h3></td>
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>联系电话</strong></h3></td>
+                        <td style="width: 130px;text-align: center"><h3>{{ recruit.tel }}</h3></td>
+                        <td class="warning" rowspan="3" style="word-break: break-all; width: 200px;text-align: center"><h4>{{ recruit.introduction }}</h4></td>
+                    </tr>
+                    <tr class="active">
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>公司性质</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ recruit.property }}</h3></td>
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>公司地址</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ recruit.address }}</h3></td>
+                    </tr>
+                    <tr class="active">
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>电子邮件</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ recruit.email }}</h3></td>
+                        <td class="info" style="width: 130px;text-align: center"><h3><strong>月薪</strong></h3></td>
+                        <td style="width: 100px;text-align: center"><h3>{{ recruit.salary }}</h3></td>
+                    </tr>
+                </table>
+            <input type="submit" class="button  button-pill button-large" value="返回" onclick=window.location.href='/search'>
+        </div>
+    </div>
+ </center>
+</body>
+</html>
+{% endblock %}

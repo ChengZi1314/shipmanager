@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>船员在线</title>
+    <link rel="stylesheet" href="{% static 'shipmanager/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'shipmanager/css/pygments/manni.css' %}">
+    <link rel="stylesheet" href="{% static 'lib/css/bootstrap.min.css' %}">
+
+    <style type="text/css">
+        #id_username{width: 170px;border-radius: 5px; }
+        #id_password{width: 170px;border-radius: 5px;margin-left: 12px; }
+        #foot {
+            background-color: #a7a9ab;
+            color:white;
+            clear:both;
+            text-align:center;
+            padding:5px;
+        }
+        .nav ul{
+            width:1280px;
+
+            height:50px;
+            padding: 10px;
+        }
+        .nav ul li{
+            float:left;
+        }
+        .nav ul li a{
+            width:400px;
+            height:50px;
+            line-height:50px;
+            background: #5bc0de;
+            color:#FFF;
+            font-size:25px;
+            display:block;
+            text-align:center;
+            text-decoration:none;
+        }
+        .nav ul li a:hover{
+            width:400px;
+            height:50px;
+            line-height:50px;
+            border:1px solid red;
+            color:red;
+            background:#FFF;
+        }
+    </style>
+</head>
+
+<body>
+<center>
+    <div style="width: 1300px;height: 150px">
+
+         <div id="header" style="padding-left:100px;height: 80px;width: 1300px">
+
+             <div  style="float:left;width: 200px">
+                <a href="/" class="logo1"></a>
+             </div>
+
+             <div style="float:left;height: 78px;width: 1000px">
+                 {% if user.is_authenticated %}
+                     <div style="float:left;width: 200px;height: 50px;padding-top: 20px">
+                         <p>你已登录，欢迎你：<a href="/personal">{{ user.username }}</a></p>
+                     </div>
+                     <div style="float:left;width: 100px;height: 50px;padding-top: 30px">
+                         <button class="btn btn-default" onclick="window.location.href='{% url 'logout' %}?next={{ request.path}} '">注销登陆</button>
+                     </div>
+                     <div style="float:left;width: 100px;height: 50px;padding-top: 30px">
+                         <button class="btn btn-default" onclick="window.location.href='{% url 'password_change' %}?next={{ request.path}} '">修改密码</button>
+                     </div>
+                      <div style="float:left;width: 100px;height: 50px;padding-top: 30px">
+                         <button class="btn btn-default" onclick="window.location.href='{% url 'users:recruit' %}'">发布招聘</button>
+                     </div>
+                     <div style="float:left;width: 100px;height: 50px;padding-top: 30px">
+                         <button class="btn btn-default" onclick="window.location.href='{% url 'users:personal' %}'">发布简历</button>
+                     </div>
+                     <div style="float:left;width: 100px;height: 50px;padding-top: 30px">
+                         <button class="btn btn-default" onclick="window.location.href='{% url 'users:search_crew' %}'">搜简历</button>
+                     </div>
+                     <div style="float:left;width: 100px;height: 50px;padding-top: 30px">
+                         <button class="btn btn-default" onclick="window.location.href='{% url 'users:post_article' %}'">写文章</button>
+
+                     </div>
+                     <div style="float:left;width: 100px;height: 50px;padding-top: 30px">
+                         <button class="btn btn-default" onclick="window.location.href='{% url 'users:add_contact' %}'">添加交流</button>
+                     </div>
+                 {% else %}
+                     <div style="float:left;width: 200px;height: 50px;padding-top: 20px">
+                         <p>你还没有登录，请</p>
+                     </div>
+                     <div style="float:left;width: 100px;height: 50px;padding-top: 30px">
+                         <button class="btn btn-default" onclick="window.location.href='{% url 'login' %}?next={{ request.path}} '">登陆</button>
+                     </div>
+                     <div style="float:left;width: 100px;height: 50px;padding-top: 30px">
+                         <button class="btn btn-default" onclick="window.location.href='{% url 'users:register' %}?next={{ request.path}} '">注册</button>
+                     </div>
+                     <div style="float:left;width: 100px;height: 50px;padding-top: 30px">
+                         <button class="btn btn-default" onclick="window.location.href='{% url 'users:search_crew' %}'">搜简历</button>
+                     </div>
+                     <div style="float:left;width: 100px;height: 50px;padding-top: 30px">
+                         <button class="btn btn-default" onclick="window.location.href='{% url 'users:add_contact' %}'">添加交流</button>
+                     </div>
+                 {% endif %}
+             </div>
+
+
+
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="/search">船员招聘</a></li>
+                <li><a href="/news">航运新闻</a></li>
+                <li><a href="/contact">技术交流</a></li>
+
+            </ul>
+        </div><!--导航栏框-->
+    </div>
+</center>
+
+<br/>
+
+{% block content %}{% endblock %}
+    <br/><br/><br/><br/><br/><br/><br/>
+<center>
+    <div style="width: 1300px;padding-right: 40px">
+        <div id="foot" class="noselect" style="width: 1200px">
+            <ul id="ft-links">
+                <li><a href="http://crew.sol.com.cn">船员在线</a></li>
+            </ul>
+        </div>
+    </div>
+</center>
+
+
+
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script type="text/javascript" src="{% static 'shipmanager/js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'lib/js/bootstrap.min.js' %}"></script>
+
+
+</body>
+
+
+
+
+</html>

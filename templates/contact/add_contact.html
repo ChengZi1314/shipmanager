@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加交流</title>
+</head>
+<body>
+<center>
+    <div style="width: 1000px;height: 600px;background-color: #eaf4ff;padding-top: 100px">
+        <form  method="get">
+            <input style="width: 600px" class="form-control" type="text" name="insert_name" placeholder="称呼"><br/>
+            <input style="width: 600px" class="form-control" type="text" name="insert_QQ" placeholder="在线QQ"><br/>
+            <input style="width: 600px" class="form-control" type="text" name="insert_email" placeholder="邮箱"><br/>
+            <input style="width: 600px" class="form-control" type="text" name="insert_tel" placeholder="电话"><br/>
+            <input style="width: 600px" class="form-control" type="text" name="insert_duty" placeholder="职务"><br/>
+            <input style="width: 600px" class="form-control" type="text" name="insert_company_name" placeholder="公司名称"><br/>
+            <input type="submit" class="button button-primary button-pill button-large" value="发布信息" >
+        </form>
+    </div>
+
+</center>
+</body>
+</html>
+{% endblock %}

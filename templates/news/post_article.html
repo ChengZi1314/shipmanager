@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发表文章</title>
+</head>
+<body>
+
+<center>
+    <div style="width: 1000px;height: 500px;background-color: #eaf4ff;padding-top: 100px">
+        <form  method="get">
+            <input style="width: 600px" class="form-control" type="text" name="insert_title" placeholder="标题"><br/>
+            <textarea style="height: 200px;width: 600px" class="form-control" name="insert_body" placeholder="正文"></textarea><br/>
+            <input type="submit" class="button button-primary button-pill button-large" value="发布文章" >
+        </form>
+    </div>
+
+</center>
+</body>
+</html>
+{% endblock %}

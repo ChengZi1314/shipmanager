@@ -1,0 +1,262 @@
+{% extends 'base.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <Script>
+        function test(){
+            window.open('/search_detail');
+        }
+    </Script>
+    <meta charset="UTF-8">
+    <title>搜索功能</title>
+    <style type="text/css">
+        #title{
+            width: 850px;
+            height: 30px;
+            line-height: 100px;
+            padding-right: 150px;
+            padding-top: 10px;
+        }
+        #right{
+            float:left;
+            width: 230px;
+            height: 700px;
+            background-color: #f6fcff;
+            padding-top: 20px;
+        }
+        #left{
+            float: left;
+            width: 200px;
+            height: 700px;
+            background-color: #f6fcff;
+
+        }
+        #text1{
+            line-height: 33px;
+        }
+        #text2 {
+            line-height: 24px;
+        }
+        #button{
+            width: 848px;
+            height: 50px;
+            float: left;
+            padding-right: 200px;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <div style="width: 1246px;height: 600px;padding-right: 20px;  padding-top: 30px"><!--大框-->
+        <div style="width: 450px;height: 700px;float: left">
+            <div id="left">
+                <br/>
+                <h3 id="text1">职务编号：</h3>
+                <h3 id="text1">船——龄：</h3>
+                <h3 style="line-height: 40px">公司名称：</h3>
+                <h3 id="text2">职——务：</h3>
+                <h3 id="text2">证书等级：</h3>
+                <h3 id="text2">特殊证书：</h3>
+                <h3 id="text2">路线区域：</h3>
+                <h3 id="text2">招聘船型：</h3>
+                <h3 id="text2">吨——位：</h3>
+                <h3 id="text2">时间范围：</h3>
+                <br/><br/><br/>
+            </div>
+            <div id="right">
+                <form role="search" method="get" style="float:left">
+                    <br/>
+                    <input class="form-control" type="text" name="search_duty_id" placeholder="职务编号"><br/>
+                    <input class="form-control" type="text" name="search_ship_age" placeholder="船龄"><br/>
+                    <input class="form-control" type="text" name="search_company_name" placeholder="公司名称"><br/>
+                    <label for="duty">
+                        <select name="search_duty" class="form-control">
+                            <option value="">————其他————</option> 
+                            <option value="船长">船长</option>
+                            <option value="大副">大副</option>
+                            <option value="二副">二副</option>
+                            <option value="三副">三副</option>
+                            <option value="白皮三副">白皮三副</option>
+                            <option value="驾助">驾助</option>
+                            <option value="实习三副">实习三副</option>
+                            <option value="GMDSS普通操作员">GMDSS普通操作员</option>
+                            <option value="水手长">水手长</option>
+                            <option value="木匠">木匠</option>
+                            <option value="水手">水手</option>
+                            <option value="高级水手">高级水手</option>
+                            <option value="二水">二水</option>
+                            <option value="新证水手">新证水手</option>
+                            <option value="实习水手">实习水手</option>
+                            <option value="轮机长">轮机长</option>
+                            <option value="大管轮">大管轮</option>
+                            <option value="二管轮">二管轮</option>
+                            <option value="三管轮">三管轮</option>
+                            <option value="白皮三管">白皮三管</option>
+                            <option value="电机员">电机员</option>
+                            <option value="电工">电工</option>
+                            <option value="轮助">轮助</option>
+                            <option value="实习三管">实习三管</option>
+                            <option value="机工长">机工长</option>
+                            <option value="铜匠">铜匠</option>
+                            <option value="泵匠">泵匠</option>
+                            <option value="机工">机工</option>
+                            <option value="高级机工">高级机工</option>
+                            <option value="新证机工">新证机工</option>
+                            <option value="实习机工">实习机工</option>
+                            <option value="高级水手">高级水手</option>
+                            <option value="大厨">大厨</option>
+                            <option value="服务员">服务员</option>
+                            <option value="船医">船医</option>
+                        </select>
+                    </label><br/>
+                    <label for="certificate_level">
+                        <select name="search_certificate_level" class="form-control">
+                            <option value="">————其他————</option>
+                            <option value="甲类">甲类</option>
+                            <option value="乙一">乙一</option>
+                            <option value="乙二">乙二</option>
+                            <option value="丙一">丙一</option>
+                            <option value="丙二">丙二</option>
+                            <option value="丁类">丁类</option>
+                            <option value="长一">长一</option>
+                            <option value="长二">长二</option>
+                            <option value="内河">内河</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </label><br/>
+                    <label for="special_certificate">
+                        <select name="search_special_certificate" class="form-control">
+                            <option value="">————其他————</option>
+                            <option value="化高证书">化高证书</option>
+                            <option value="油高证书">油高证书</option>
+                            <option value="液高证书">液高证书</option>
+                            <option value="油化双证">油化双证</option> 
+                            <option value="客滚船证书">客滚船证书</option>
+                            <option value="海进江证书">海进江证书</option>
+                            <option value="外籍签注适任证书">外籍签注适任证书</option>
+                            <option value="高速船证书">高速船证书</option>
+                            <option value="其他特殊证书">其他特殊证书</option>
+                        </select>
+                    </label><br/>
+                    <label for="route_area">
+                        <select name="search_route_area" class="form-control">
+                            <option value="">————其他————</option>
+                            <option value="国内南北线">国内南北线</option>
+                            <option value="中日韩">中日韩</option>
+                            <option value="东南亚">东南亚</option>
+                            <option value="中东波斯湾">中东波斯湾</option> 
+                            <option value="地中海">地中海</option>
+                            <option value="南北美">南北美</option>
+                            <option value="环球航线">环球航线</option>
+                            <option value="内河航线">内河航线</option>
+                            <option value="江海航线">江海航线</option>
+                            <option value="长江航线">长江航线</option>
+                            <option value="其他航线">其他航线</option>
+                        </select>
+                    </label><br/>
+                    <label for="recruitment_ship">
+                        <select name="search_recruitment_ship" class="form-control">
+                            <option value="">————其他————</option>
+                            <option value="散杂货船">散杂货船</option>
+                            <option value="集装箱船">集装箱船</option>
+                            <option value="多用途船">多用途船</option>
+                            <option value="油轮">油轮</option>
+                            <option value="化学品船">化学品船</option>
+                            <option value="油化船">油化船</option>
+                            <option value="液化气船">液化气船</option>
+                            <option value="工程船">工程船</option>
+                            <option value="冷藏船">冷藏船</option>
+                            <option value="港作船">港作船</option>
+                            <option value="LNG动力船">LNG动力船</option>
+                            <option value="客船">客船</option>
+                            <option value="客滚船">客滚船</option>
+                            <option value="滚装汽车船">滚装汽车船</option>
+                            <option value="拖轮">拖轮</option>
+                            <option value="作业渔船">作业渔船</option>
+                            <option value="打桩船">打桩船</option>
+                            <option value="邮船">邮船</option>
+                            <option value="沥青船">沥青船</option>
+                            <option value="木材船">木材船</option>
+                            <option value="泵船">泵船</option>
+                            <option value="工作船">工作船</option>
+                            <option value="邮政船">邮政船</option>
+                            <option value="海监船">海监船</option>
+                            <option value="救援船">救援船</option>
+                            <option value="不上船">不上船</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </label><br/>
+                    <label for="tonnage">
+                        <select name="search_tonnage" class="form-control">
+                            <option value="">————其他————</option>
+                            <option value="5千吨以下">5千吨以下</option>
+                            <option value="5千吨-1万吨">5千吨-1万吨</option>
+                            <option value="1万吨-2万吨">1万吨-2万吨</option>
+                            <option value="2万吨-3万吨">2万吨-3万吨</option> 
+                            <option value="3万吨-6万吨">3万吨-6万吨</option>
+                            <option value="6万吨-10万吨">6万吨-10万吨</option>
+                            <option value="10万吨-15万吨">10万吨-15万吨</option>
+                            <option value="15万吨-30万吨">15万吨-30万吨</option>
+                            <option value="30万吨以上">30万吨以上</option>
+                        </select>
+                    </label><br/>
+                    <label for="time">
+                        <select name="search_time" class="form-control">
+                            <option value="">————其他————</option>
+                            <option value="一星期内">一星期内</option>
+                            <option value="一个月内">一个月内</option>
+                            <option value="三个月内">三个月内</option>
+                            <option value="一年以内">一年以内</option> 
+                        </select>
+                    </label><br/><br/><br/><br/><br/><br/>
+                    <input type="submit" class="button button-primary button-pill button-large" value="提交搜索内容" onclick=test()>
+                </form>
+            </div>
+        </div>
+        <div style="float: left; padding-left: 0px">
+            <div style="width: 750px; height: 700px;background-color: #f5faff">
+                <div id="title">
+                        <h1>公司正在招聘</h1>
+                </div><br/><br/><br/><br/>
+                <div style="width: 748px;height:500px">
+                    <table class="table table-hover">
+                        <tr>
+                            <th style="width: 140px;text-align: center"><font size="4pt">职务</font></th>
+                            <th style="width: 90px;text-align: center"><font size="4pt">证书等级</font></th>
+                            <th style="width: 100px;text-align: center"><font size="4pt">航线区域</font></th>
+                            <th style="width: 100px;text-align: center"><font size="4pt">招聘船型</font></th>
+                            <th style="width: 110px;text-align: center"><font size="4pt">公司名称</font></th>
+                            <th style="width: 110px;text-align: center"><font size="4pt">发布日期</font></th>
+                        </tr>
+                    </table>
+
+                    {% load paginate_tags %}
+                    {% paginate recruit_list 5 %}
+                    {% for a in recruit_list %}
+                        <table class="table table-hover">
+                            <tr>
+                                <td style="width: 140px;text-align: center"><a href="{% url 'users:company_detail' a.pk %}"><font>{{ a.duty }}</font></a></td>
+                                <td style="width: 90px;text-align: center"><a href="{% url 'users:company_detail' a.pk %}"><font>{{ a.certificate_level }}</font></a></td>
+                                <td style="width: 100px;text-align: center"><a href="{% url 'users:company_detail' a.pk %}"><font>{{ a.route_area }}</font></a></td>
+                                <td style="width: 100px;text-align: center"><a href="{% url 'users:company_detail' a.pk %}"><font>{{ a.recruitment_ship }}</font></a></td>
+                                <td style="width: 110px;text-align: center"><a href="{% url 'users:company_detail' a.pk %}"><font>{{ a.company_name }}</font></a></td>
+                                <td style="width: 110px;text-align: center"><a href="{% url 'users:company_detail' a.pk %}"><font>{{ a.post_time }}</font></a></td>
+                            </tr>
+                        </table>
+                    {% endfor %}
+                    <div style="width: 748px">
+                        {% include 'recruit/pagination1.html' %}
+                    </div>
+                </div>
+               <div>
+                    <input type="submit" class="button  button-pill button-large" value="我要搜简历" onclick=window.location.href='/search_crew'>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</center>
+
+</body>
+</html>
+{% endblock %}

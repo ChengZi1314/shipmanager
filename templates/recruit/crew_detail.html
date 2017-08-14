@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<Script>
+    if(!window.name){
+        window.name = 'test';
+        window.location.reload();
+}
+
+</Script>
+<head>
+    <meta charset="UTF-8">
+    <title>详细搜索内容</title>
+</head>
+<body >
+<center>
+    <div style="width: 1300px; padding-right: 40px">
+        <table class="table table-hover">
+            <tr>
+                <th style="width: 100px;text-align: center"><font size="4pt">职务</font></th>
+                <th style="width: 100px;text-align: center"><font size="4pt">证书等级</font></th>
+                <th style="width: 200px;text-align: center"><font size="4pt">特殊证书</font></th>
+                <th style="width: 130px;text-align: center"><font size="4pt">路线区域</font></th>
+                <th style="width: 130px;text-align: center"><font size="4pt">招聘船型</font></th>
+                <th style="width: 100px;text-align: center"><font size="4pt">时间范围</font></th>
+                <th style="width: 100px;text-align: center"><font size="4pt">发布时间</font></th>
+            </tr>
+        </table>
+        {% load paginate_tags %}
+        {% paginate cv_list 8 %}
+        {% for cv in cv_list %}
+            <table class="table table-hover" cellspacing="100">
+                <tr>
+                    <td style="width: 100px;text-align: center"><a href="{% url 'users:cv_detail' cv.pk %}">{{ cv.duty }}</a></td>
+                    <td style="width: 100px;text-align: center"><a href="{% url 'users:cv_detail' cv.pk %}">{{ cv.certificate_level }}</a></td>
+                    <td style="width: 200px;text-align: center"><a href="{% url 'users:cv_detail' cv.pk %}">{{ cv.special_certificate }}</a></td>
+                    <td style="width: 130px;text-align: center"><a href="{% url 'users:cv_detail' cv.pk %}">{{ cv.route_area }}</a></td>
+                    <td style="width: 130px;text-align: center"><a href="{% url 'users:cv_detail' cv.pk %}">{{ cv.recruitment_ship }}</a></td>
+                    <td style="width: 100px;text-align: center"><a href="{% url 'users:cv_detail' cv.pk %}">{{ cv.time }}</a></td>
+                    <td style="width: 100px;text-align: center"><a href="{% url 'users:cv_detail' cv.pk %}">{{ cv.post_time }}</a></td>
+                </tr>
+            </table>
+        {% endfor %}
+        <div style="width: 748px;padding-right: 0px">
+            {% include 'recruit/pagination4.html' %}
+        </div>
+    </div>
+</center>
+</body>
+</html>
+{% endblock %}

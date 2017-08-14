@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>线下联系</title>
+</head>
+<body>
+<center>
+    <div style="width: 1300px;padding-right: 40px">
+        <table class="table table-hover">
+            <tr>
+                <th style="width: 200px;text-align: center"><font size="4pt">姓名</font></th>
+                <th style="width: 200px;text-align: center"><font size="4pt">QQ</font></th>
+                <th style="width: 200px;text-align: center"><font size="4pt">邮箱</font></th>
+                <th style="width: 200px;text-align: center"><font size="4pt">电话</font></th>
+                <th style="width: 200px;text-align: center"><font size="4pt">职务</font></th>
+                <th style="width: 200px;text-align: center"><font size="4pt">公司名称</font></th>
+            </tr>
+        </table>
+        {% for a in con_list %}
+            <table class="table table-hover">
+                <tr>
+                    <td style="width: 200px;text-align: center"><font>{{ a.name }}</font></td>
+                    <td style="width: 200px;text-align: center"><font>{{ a.QQ }}</font></td>
+                    <td style="width: 200px;text-align: center"><font>{{ a.email }}</font></td>
+                    <td style="width: 200px;text-align: center"><font>{{ a.tel }}</font></td>
+                    <td style="width: 200px;text-align: center"><font>{{ a.duty }}</font></td>
+                    <td style="width: 200px;text-align: center"><font>{{ a.company_name }}</font></td>
+                </tr>
+            </table>
+        {% endfor %}
+    </div>
+</center>
+
+</body>
+</html>
+{% endblock %}

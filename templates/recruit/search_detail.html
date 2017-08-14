@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<Script>
+    if(!window.name){
+        window.name = 'test';
+        window.location.reload();
+}
+
+</Script>
+<head>
+    <meta charset="UTF-8">
+    <title>详细搜索内容</title>
+</head>
+<body >
+<center>
+    <div style="width: 1300px; padding-right: 40px">
+        <table class="table table-hover">
+            <tr>
+                <th style="width: 100px;text-align: center"><font size="4pt">职务</font></th>
+                <th style="width: 100px;text-align: center"><font size="4pt">船龄</font></th>
+                <th style="width: 200px;text-align: center"><font size="4pt">公司名称</font></th>
+                <th style="width: 100px;text-align: center"><font size="4pt">证书等级</font></th>
+                <th style="width: 200px;text-align: center"><font size="4pt">特殊证书</font></th>
+                <th style="width: 130px;text-align: center"><font size="4pt">路线区域</font></th>
+                <th style="width: 130px;text-align: center"><font size="4pt">招聘船型</font></th>
+                <th style="width: 130px;text-align: center"><font size="4pt">吨位</font></th>
+                <th style="width: 100px;text-align: center"><font size="4pt">时间范围</font></th>
+            </tr>
+        </table>
+        {% load paginate_tags %}
+        {% paginate post_list 8 %}
+        {% for recruit in post_list %}
+            <table class="table table-hover" cellspacing="100">
+                <tr>
+                    <td style="width: 100px;text-align: center"><a href="{% url 'users:company_detail' recruit.pk %}">{{ recruit.duty }}</a></td>
+                    <td style="width: 100px;text-align: center"><a href="{% url 'users:company_detail' recruit.pk %}">{{ recruit.ship_age }}</a></td>
+                    <td style="width: 200px;text-align: center"><a href="{% url 'users:company_detail' recruit.pk %}">{{ recruit.company_name }}</a></td>
+                    <td style="width: 100px;text-align: center"><a href="{% url 'users:company_detail' recruit.pk %}">{{ recruit.certificate_level }}</a></td>
+                    <td style="width: 200px;text-align: center"><a href="{% url 'users:company_detail' recruit.pk %}">{{ recruit.special_certificate }}</a></td>
+                    <td style="width: 130px;text-align: center"><a href="{% url 'users:company_detail' recruit.pk %}">{{ recruit.route_area }}</a></td>
+                    <td style="width: 130px;text-align: center"><a href="{% url 'users:company_detail' recruit.pk %}">{{ recruit.recruitment_ship }}</a></td>
+                    <td style="width: 130px;text-align: center"><a href="{% url 'users:company_detail' recruit.pk %}">{{ recruit.tonnage }}</a></td>
+                    <td style="width: 100px;text-align: center"><a href="{% url 'users:company_detail' recruit.pk %}">{{ recruit.time }}</a></td>
+                </tr>
+            </table>
+        {% endfor %}
+        <div style="width: 748px;padding-right: 0px">
+            {% include 'recruit/pagination2.html' %}
+        </div>
+    </div>
+</center>
+</body>
+</html>
+{% endblock %}
